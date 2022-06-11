@@ -20,6 +20,8 @@ ToDo:
 	15. Win Screen ✔
 *****/
 
+alert("Play at 90% zoom for the best gameplay.");
+
 var canvas = document.getElementById("canvas");
 var ctx = canvas.getContext("2d");
 const width = canvas.width;
@@ -42,9 +44,9 @@ buttons.push(new Button((buttons[1].x+buttons[1].w)+20, height*.25, 115, 50, 10,
 buttons.push(new Button(width/10, height*.5, 200, 50, 10, 40, "Deflation"));
 buttons.push(new Button(width/2, height*.5, 200, 50, 10, 40, "Sandbox"));
 
-buttons.push(new Button(width*.05, height/2-100, 175, 175, 30, -20, "Easy", true, "file:///C:/Users/Mwayi/Pictures/Track1.png"));
-buttons.push(new Button(width*.65833333333333333333, height/2-100, 175, 175, -15, -20, "Medium", true, "file:///C:/Users/Mwayi/Pictures/Track2.png"));
-buttons.push(new Button(width/2-87.5, height/2+150, 175, 175, 25, -20, "Hard", true, "file:///C:/Users/Mwayi/Pictures/Track3.png"));
+buttons.push(new Button(width*.05, height/2-100, 175, 175, 30, -20, "Easy", true, "Track1.png"));
+buttons.push(new Button(width*.65833333333333333333, height/2-100, 175, 175, -15, -20, "Medium", true, "Track2.png"));
+buttons.push(new Button(width/2-87.5, height/2+150, 175, 175, 25, -20, "Hard", true, "Track3.png"));
 
 //The things you see to the left of the game
 var information = document.getElementById("information");
@@ -911,9 +913,9 @@ function draw() {
 function update() {
 	draw();
 
-	time++;
+	setTimeout(update, interval);
 
-	requestAnimationFrame(update);
+	time++;
 }
 
 update();
